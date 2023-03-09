@@ -1,7 +1,6 @@
 import {
   AppstoreOutlined,
   DeleteOutlined,
-  GlobalOutlined,
   MenuUnfoldOutlined,
   PlusOutlined,
 } from "@ant-design/icons";
@@ -11,14 +10,8 @@ import "./index.less";
 interface ILayoutProps {}
 
 const DATASET_ITEMS = [
-  { label: "新建数据", key: "/dataset/create", icon: <PlusOutlined /> },
   { label: "我的数据", key: "/dataset/list", icon: <MenuUnfoldOutlined /> },
-  { label: "案例数据", key: "/dataset/case", icon: <AppstoreOutlined /> },
-  {
-    label: "系统直连",
-    key: "/dataset/SYSTEM_DIRECT_CONNECT",
-    icon: <GlobalOutlined />,
-  },
+
   { label: "回收站", key: "/dataset/delete", icon: <DeleteOutlined /> },
 ];
 

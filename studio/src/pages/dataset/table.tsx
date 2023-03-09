@@ -117,7 +117,7 @@ const GS_GRAPH_LISTS = [
       ],
     },
     gremlin_interface: {
-      gremlin_endpoint: "https://gi-api.graphscope.app/gremlin",
+      gremlin_endpoint: "ws://11.166.91.225:31943/gremlin", //"https://gi-api.graphscope.app/gremlin",
       grpc_endpoint: "192.168.0.174:30430",
       username: "xxxxxxxx",
       password: "xxxxxxxx",
@@ -165,7 +165,7 @@ const trans = (record) => {
   } = record;
 
   const { hostname, protocol } = window.location;
-  const HTTP_SERVER_URL = `${protocol}//${hostname}:7001`;
+  const HTTP_SERVER_URL = `http://30.230.89.170:7001`;
 
   const schemaData = transSchemaDataFromGS(schema);
   const id = `ds_${createUuid()}`; //GI平台需要有个datasetId，这个ID需要提前随机生成
@@ -185,7 +185,7 @@ const trans = (record) => {
     size: "G(100,20)", //如果列表中有图的数据规模的话，可以加上，GI平台支持展示
   };
   const encodeInfo = encodeURIComponent(JSON.stringify(InfoForGraphInsight));
-  const GI_DEPLOY_SITE = "http://192.168.31.238:8001"; // window.location.origin
+  const GI_DEPLOY_SITE = "http://30.230.89.170:8000/"; // window.location.origin
   window.open(
     `${GI_DEPLOY_SITE}/#/dataset/SYSTEM_DIRECT_CONNECT?datasetInfo=${encodeInfo}`
   );
